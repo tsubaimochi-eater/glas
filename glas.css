@@ -1,0 +1,360 @@
+@charset "utf-8";
+
+
+body {
+    /* フォント */
+    font-family: "Kaisei Decol", serif;
+    /* フォントサイズ */
+    font-size: 24px;
+    /* もともとついていた余白を取りました */
+    margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        /* フォントサイズ */
+        font-size: 18px;
+    }
+}
+
+.hero {
+    /* タイトル画面を横いっぱいに設定しました */
+    width: 100%;
+    /* タイトル画面の高さを最大に設定しました */
+    height: 100vh;
+    /* タイトル文字の基準位置を決めました */
+    position: relative;
+    /* タイトル画像のはみ出す部分を表示させないようにしました */
+    overflow: hidden;
+}
+
+.hero img {
+    /* タイトル画像を横いっぱいに設定しました */
+    width: 100%;
+    /* タイトル画像の高さを最大に設定しました */
+    height: 100%;
+    /* 画像の比率を変えずに枠いっぱいに広げました */
+    object-fit: cover;
+    /* 奥行きの一番奥に設定しました */
+    z-index: 0;
+}
+
+.hero strong {
+    /* 基準位置に対して中央に配置しました */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 奥行きの一つ手前に配置しました */
+    z-index: 1;
+    /* フォントサイズ */
+    font-size: 60px;
+    /* フォントの太さ */
+    font-weight: bold;
+    /* 文字色 */
+    color: rgb(244, 241, 236);
+    /* 文字に影をつけました */
+    text-shadow: 6px 6px 6px#333333;
+}
+
+@media screen and (max-width: 1200px) {
+    .hero strong {
+        /* フォントサイズ */
+        font-size: 24px;
+    }
+}
+
+
+nav {
+    /* ロゴとナビゲーションを横並びにしました */
+    display: flex;
+    /* ロゴとナビゲーションを両端に配置しました */
+    justify-content: space-between;
+    /* ロゴとナビゲーションを上に固定しました */
+    position: fixed;
+    top: 0;
+    /* ロゴとナビゲーションの全体幅を設定しました */
+    width: 100%;
+}
+
+.navcontainer {
+    /* ナビゲーションの項目を横並びにしました */
+    display: flex;
+    /* ナビゲーションの項目の並び方を設定しました */
+    justify-content: flex-end;
+    /* 箇条書きの始めの点を消しました */
+    list-style: none;
+    
+}
+
+.navitem a {
+    /* 文字色 */
+    color: #333333;
+    /* 背景色 */
+    background-color: aliceblue;
+    /* フォントサイズ */
+    font-size: 24px;
+    /* フォントの太さ */
+    font-weight: bold;
+    /* 下線を消しました */
+    text-decoration: none;
+    /* 下線を透明に設定しました */
+    border-bottom: 2px solid transparent;
+    /* 下線が現れるまでの時間 */
+    transition: .6s;
+    /* ナビゲーション文字に余白をつけました */
+    padding: 12px;
+}
+
+.navitem a:hover {
+    /* 文字色 */
+    color: rgb(7, 7, 85);
+    /* 時間差で現れる下線の色 */
+    border-bottom: 2px solid rgb(7, 7, 85);
+}
+
+@media screen and (max-width: 1200px) {
+    .navitem a {
+        /* フォントサイズ */
+        font-size: 50%;
+        /* 余白の比率を変えました */
+        padding: 6px;
+    }
+}
+
+
+.headline {
+    /* 見出し文字を中央揃えにしました */
+    text-align: center;
+    /* 見出しの文字の大きさ */
+    font-size: 50px;
+    /* 見出し文字の太さ */
+    font-weight: bold;
+    /* もともとついていた余白を取りました */
+    margin: 0;
+    /* 見出し文字の上下に余白をつけました */
+    padding: 30px 0;
+}
+
+.about {
+    /* 背景色 */
+    background-color: rgba(245, 233, 210, 0.634);
+}
+
+.about-figure {
+    /* 画像と文字を横並びにしました */
+    display: flex;
+    /* 中央で揃えました */
+    align-items: center;
+}
+
+.about-figure img {
+    /* 画像の幅を設定しました */
+    width: 50%;
+}
+
+figcaption {
+    /* 文章の左右に余白をつけました */
+    padding: 0 40px;
+}
+
+@media screen and (max-width: 1200px) {
+    .about-figure {
+        /* 要素の横並びを解消しました */
+        display: block;
+    }
+    .about-figure img {
+        /* 画像の比率を変えました */
+        width: 100%;
+    }
+}
+
+.right {
+    /* 画像と文章を横並びにしました */
+    display: flex;
+    /* 中央に揃えました */
+    align-items: center;
+}
+
+.left {
+    /* 画像と文章を横並びにしました */
+    display: flex;
+    /* 並べ方を設定しました */
+    flex-direction: row-reverse;
+    /* 中央に揃えました */
+    align-items: center;
+}
+
+.right img,
+.left img {
+    /* 画像の幅を設定しました */
+    width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+    .right,.left {
+        /* 画像と文章の横並びを解消しました */
+        display: block;
+    }
+    .right img,.left img {
+        /* 画像の幅の比率を変えました */
+        width: 100%;
+    }
+}
+
+
+.timeline {
+    /* 背景色 */
+    background-color: rgba(180, 150, 208, 0.688);
+    /* 記事の終わりに余白を持たせました */
+    padding-bottom: 40px;
+}
+
+
+table {
+    /* 表の線を一重にしました */
+    border-collapse: collapse;
+    /* 表を中央に寄せました */
+    margin: 0 auto;
+
+}
+
+th,td {
+    /* 表内部の余白を設定しました */
+    padding: 12px;
+}
+
+.surveys {
+    background-color: rgba(245, 233, 210, 0.634);
+    padding-bottom: 40px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    width: 300px;
+}
+
+.input,
+select,
+textarea {
+    width: 300px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.checkbox-group {
+    width: 300px;
+}
+
+
+.inner {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.button {
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .row {
+        display: block;
+    }
+    .inner {
+        width: 300px;
+    }
+}
+
+
+.links {
+    background-color: rgba(245, 233, 210, 0.634);
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-container a {
+    color: #333333;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: .4s;
+}
+
+.link-container a:hover {
+    color: rgb(7, 7, 85);
+    border-bottom: 2px solid rgb(7, 7, 85);
+}
+
+footer {
+    background-color: rgba(175, 234, 234, 0.673);
+}
+
+.footer-figure {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 30px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+address {
+    font-style: normal;
+}
+
+hr {
+    margin: 0;
+}
+
+small {
+    display: block;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .footer-figure {
+        display: block;
+    }
+    iframe {
+        
+        width: 100%;
+    }
+}
+
+
+
+
+
+.top-button a {
+    /* 文字色 */
+    color: #333333;
+    /* 背景色 */
+    background-color: aliceblue;
+    /* 文字に余白をつけました */
+    padding: 12px;
+    /* リンクの位置を固定しました */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .top-button a {
+        /* フォントサイズ */
+        font-size: 50%;
+        /* 余白の比率を変えました */
+        padding: 6px;
+}
